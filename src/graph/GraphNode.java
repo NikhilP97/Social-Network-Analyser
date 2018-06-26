@@ -18,6 +18,10 @@ public class GraphNode {
 	public Set<GraphNode> getNeighbours() {
 		return neighbours;
 	}
+	
+	public void  setNeighbours(Set<GraphNode> ogSet) {
+		 this.neighbours.addAll(ogSet);
+	}
 
 	public void addNeighbours(GraphNode newNeighbour) {
 		neighbours.add(newNeighbour);
@@ -26,6 +30,10 @@ public class GraphNode {
 	public Set<GraphEdge> getEdges() {
 		return edges;
 	}
+	
+	public void setEdges(Set<GraphEdge> ogEdges) {
+		this.edges.addAll(ogEdges);
+	}
 
 	public void addEdges(GraphEdge newEdge) {
 		edges.add(newEdge);
@@ -33,6 +41,15 @@ public class GraphNode {
 
 	public int getUserNumber() {
 		return userNumber;
+	}
+	
+	public boolean hasEdge(GraphNode thisNode, GraphNode otherNode) {
+		if(thisNode.getNeighbours().contains(otherNode)) {
+			return true;
+		}
+		else {
+			return false;
+		}
 	}
 	
 	
